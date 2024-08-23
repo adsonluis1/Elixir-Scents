@@ -5,6 +5,7 @@ import { IoMdMenu } from "react-icons/io";
 import MenuMobile from "../menuMobile/MenuMobile";
 import Search from "../search/Search";
 import { useNavigate } from "react-router-dom";
+import {NavLink} from "react-router-dom"
 
 const Header = () => {
     const [openOrCloseMenu, setOpenOrCloseMenu] = useState<boolean>(false)
@@ -27,11 +28,11 @@ const Header = () => {
             <S.Title onClick={()=> navigate('/')}>Elixir Scents</S.Title>
         </S.Div>
         <S.Nav>
-            <a href="#">Chanel</a>
-            <a href="#">Dior</a>
-            <a href="#">Giorgio Armani</a>
-            <a href="#">Yves Saint Laurent</a>
-            <a href="#">Lancôme</a>
+            <NavLink to={'/Chanel'}>Chanel</NavLink>
+            <NavLink to={'/Dior'}>Dior</NavLink>
+            <NavLink to={'/GiorgioArmani'}>Giorgio Armani</NavLink>
+            <NavLink to={'/YvesSaintLaurent'}>Yves Saint Laurent</NavLink>
+            <NavLink to={'/Lancome'}>Lancôme</NavLink>
         </S.Nav>
 
         <S.NavIcons>
