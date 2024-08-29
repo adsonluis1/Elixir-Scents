@@ -9,24 +9,24 @@ const Home = () => {
         <Header />
         <S.Main>
             <Carrossel title={"Mais vendidos"}>
-                <S.Img src='/img/login.webp'></S.Img>
-                <S.Img src='/img/login.webp'></S.Img>
-                <S.Img src='/img/login.webp'></S.Img>
-                <S.Img src='/img/login.webp'></S.Img>
-                <S.Img src='/img/login.webp'></S.Img>
-                <S.Img src='/img/login.webp'></S.Img>
-                <S.Img src='/img/login.webp'></S.Img>
-                <S.Img src='/img/login.webp'></S.Img>
-                <S.Img src='/img/login.webp'></S.Img>
-                <S.Img src='/img/login.webp'></S.Img>
+                <S.Img src='/img/Dior/masculino-600x600.webp'/>
+                <S.Img src='/img/Dior/masculino-600x600.webp'/>
+                <S.Img src='/img/Dior/masculino-600x600.webp'/>
+                <S.Img src='/img/Dior/masculino-600x600.webp'/>
+                <S.Img src='/img/Dior/masculino-600x600.webp'/>
+                <S.Img src='/img/Dior/masculino-600x600.webp'/>
+                <S.Img src='/img/Dior/masculino-600x600.webp'/>
+                <S.Img src='/img/Dior/masculino-600x600.webp'/>
+                <S.Img src='/img/Dior/masculino-600x600.webp'/>
+                <S.Img src='/img/Dior/masculino-600x600.webp'/>
             </Carrossel>
-          <S.Section>
+          <S.SectionPropaganda>
             <Propaganda reverse={false} title={'Chanel'} sr={"Chanel"}/>
             <Propaganda reverse={true} title='Dior' sr='Dior'/>
-            <Propaganda reverse={false} title='Giorgio Armani'sr="Giorgio Armani"/>
+            <Propaganda reverse={false} title='Guerlain'sr="Guerlain"/>
             <Propaganda reverse={true} title='Yves Saint Laurent' sr='Yves Saint Laurent'/>
             <Propaganda reverse={false} title='Paco Rabanne' sr='Paco Rabanne'/>
-          </S.Section>
+          </S.SectionPropaganda>
         </S.Main>
     </>
 
