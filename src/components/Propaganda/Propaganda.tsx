@@ -2,8 +2,8 @@ import { useNavigate } from 'react-router-dom'
 import * as S from './Propaganda.styled'
 
 export type Tpropaganda = {
-  title:"Chanel" | "Dior" | "Giorgio Armani" | "Yves Saint Laurent" | "Lancome"
-  sr:"Chanel" | "Dior" | "Giorgio Armani" | "Yves Saint Laurent" | "Lancome"
+  title:"Chanel" | "Dior" | "Giorgio Armani" | "Yves Saint Laurent" | "Paco Rabanne"
+  sr:"Chanel" | "Dior" | "Giorgio Armani" | "Yves Saint Laurent" | "Paco Rabanne"
   reverse:boolean
 }
 
