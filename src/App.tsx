@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom"
 import DashbordLoginRegister from "./pages/dashbordLoginRegister/DashbordLoginRegister"
 import Home from "./pages/home/Home"
 import Perfumes from "./pages/Perfumes/Perfumes"
+import PerfumesM from "./pages/PerfumesMasculino/PefumesM"
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/register" element={<Register />}/>
         <Route path="/dashbordAccount" element={<DashbordLoginRegister />}/>
         <Route path="/:marca" element={<Perfumes />}/>
+        <Route path="/:marca/masculino" element={<PerfumesM />}/>
       </Routes>
     </>
   )
