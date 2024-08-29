@@ -38,7 +38,7 @@ export const Nav = styled.nav`
         color: white;
     }
 
-    @media screen and (max-width: 710px) {
+    @media screen and (max-width: 765px) {
         display: none;
     }
 `
@@ -60,7 +60,7 @@ export const NavIcons = styled.nav`
 export const DivMenuMobile = styled.div`
     display: none;
     color: white;
-    @media screen and (max-width: 710px) {
+    @media screen and (max-width: 765px) {
         display: flex;
         align-items: center;
         & > * {
