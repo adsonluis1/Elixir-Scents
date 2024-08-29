@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 type Tpropaganda = {
-    $sr:"Chanel" | "Dior" | "Giorgio Armani" | "Yves Saint Laurent" | "Paco Rabanne"
+    $sr:"Chanel" | "Dior" | "Guerlain" | "Yves Saint Laurent" | "Paco Rabanne"
 }
 
 type TDivPropaganda = {
@@ -42,9 +42,9 @@ export const DivImg = styled.div<Tpropaganda>`
                 background-image: url('/img/Dior/propaganda-dior.jpg');
            `        
         : 
-        $sr=="Giorgio Armani"?    
+        $sr=="Guerlain"?    
         css`
-                background-image: url('/img/GiorgioArmani/propaganda-armani.jpg');
+                background-image: url('/img/Guerlain/propaganda-guerlain.jpg');
            `        
         : 
         $sr == "Yves Saint Laurent"?
@@ -78,8 +78,8 @@ export const DivTitle = styled.div<Tpropaganda>`
     ${({$sr})=>
         $sr=="Chanel"?            
         css`
-               background-color: white;
-               color: black;
+               background-color: #f8a61d;
+               color: white;
             `
         :
         $sr=="Dior"?    
@@ -88,9 +88,9 @@ export const DivTitle = styled.div<Tpropaganda>`
                 color: white;
            `        
         : 
-        $sr=="Giorgio Armani"?    
+        $sr=="Guerlain"?    
         css`
-               background-color: #090909;
+               background-color: #1f4a41;
                color: white;
            `        
         :
