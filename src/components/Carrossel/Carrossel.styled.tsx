@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Section = styled.section`
     width: 100vw;
-    height: 150px;
+    padding: 10px 0px;
 `
 
 export const Title = styled.h2`
@@ -43,15 +43,18 @@ export const ArrowBtn = styled.div<ArrowBtn>`
     ${({$position})=> $position == "left"?
         css`
             left: 0px;
+            border-radius: 0px 8px 8px 0px;
         `     
         :
         css`
             right: 0px;
+            border-radius: 8px 0px 0px 8px;
+
         `
     }
     background-color: #00000045;
     height: 150px;
-    width: 20px;
+    width: 15px;
 
     &:hover{
         background-color:#0000009d;
