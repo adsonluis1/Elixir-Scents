@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import useCheckWidth from '../../hooks/useCheckWidth';
 
 type TNavPerfumes = {
-  url:"Chanel" | "Dior" | "GiorgioArmani" | "YvesSaintLaurent" | "PacoRabanne" | undefined
+  url:"Chanel" | "Dior" | "Guerlain" | "YvesSaintLaurent" | "PacoRabanne" | undefined
   dark?:boolean
 }
 
@@ -19,7 +19,7 @@ const NavPefumes = ({url,dark}:TNavPerfumes) => {
   return (
     <S.Nav $dark={dark}>
         {openOrClose  &&
-          <CiCircleChevDown title='Abri menu de filtro' onClick={()=> setOpenOrClose((prev)=> !prev)}/>
+          <CiCircleChevDown title='Abri menu de navegação' onClick={()=> setOpenOrClose((prev)=> !prev)}/>
         }
         {!openOrClose &&
         <>
@@ -38,7 +38,7 @@ const NavPefumes = ({url,dark}:TNavPerfumes) => {
             </S.DivImg>
           </S.CoverImgs>
           {!openOrClose && 
-            <CiCircleChevUp title='Fechar menu de filtro' onClick={()=> setOpenOrClose((prev)=> !prev)}/>
+            <CiCircleChevUp title='Fechar menu de navegação' onClick={()=> setOpenOrClose((prev)=> !prev)}/>
           }
           </>
         }
