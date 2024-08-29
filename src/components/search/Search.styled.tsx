@@ -4,6 +4,7 @@ export const Section = styled.section`
     background-color: white;
     color: black;
     position: absolute;
+    z-index: 1;
     top: 100px;
     left: 0;
     height: calc(100vh - 100px);
