@@ -32,7 +32,7 @@ const Header = () => {
             <NavLink to={'/Dior'}>Dior</NavLink>
             <NavLink to={'/GiorgioArmani'}>Giorgio Armani</NavLink>
             <NavLink to={'/YvesSaintLaurent'}>Yves Saint Laurent</NavLink>
-            <NavLink to={'/Lancome'}>Lancôme</NavLink>
+            <NavLink to={'/PacoRabanne'}>Paco Rabanne</NavLink>
         </S.Nav>
 
         <S.NavIcons>
