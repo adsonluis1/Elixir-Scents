@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import * as S from "./Search.styled"
 import { FaSearch } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
@@ -10,6 +10,18 @@ type Search = {
 
 const Search = ({setOpenOrCloseSearch}:Search) => {
   const {register,handleSubmit,handleSubmiteData,errors} = useSearch()
+
+  useEffect(()=>{
+    const desabilitScroll = (evt:Event)=>{
+      evt.preventDefault()
+    }
+    document.body.style.overflow = "hidden"
+    window.addEventListener('wheel', desabilitScroll, { passive: false });
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('wheel', desabilitScroll);
+    }
+  },[])
 
   return (
     <S.Section onSubmit={handleSubmit(handleSubmiteData)}>
