@@ -1,54 +1,17 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Main = styled.main`
     
 `
-
-export const Section = styled.section`
-    
-`
-
-type TDivTopMarca = {
-    $marca:"Chanel" | "Dior" | "GiorgioArmani" | "YvesSaintLaurent" | "Lancome" | undefined
-}
-
-export const DivTopMarca = styled.div<TDivTopMarca>`
+export const SectionProducts = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: 100px;
-    background-color: black;
-    ${({$marca})=> 
-        $marca == "Chanel"?
-        css`
-            
-        `
-        :
-        $marca == "Dior"?
-        css`
-            
-        `
-        :
-        $marca == "GiorgioArmani"?
-        css`
-            
-        `
-        :
-        $marca == "Lancome"?
-        css`
-            
-        `
-        :
-        $marca == "YvesSaintLaurent"?
-        css`
-            
-        `
-        :""
-    }
-`
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 
-export const Title = styled.h1`
-    color: white;
-    font-size: 3em;
+    @media screen and (max-width: 480px){
+       flex-direction: column;
+       gap: 20px;
+    }
 `
