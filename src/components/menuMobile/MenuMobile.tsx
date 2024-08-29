@@ -16,9 +16,9 @@ const MenuMobile = ({setOpenOrCloseMenu}:MenuMobile) => {
         <S.Nav>
             <NavLink onClick={()=> setOpenOrCloseMenu((prev)=> !prev)} to={'/Chanel'}>Chanel</NavLink>
             <NavLink onClick={()=> setOpenOrCloseMenu((prev)=> !prev)} to={'/Dior'}>Dior</NavLink>
-            <NavLink onClick={()=> setOpenOrCloseMenu((prev)=> !prev)} to={'/GiorgioArmani'}>Giorgio Armani</NavLink>
+            <NavLink onClick={()=> setOpenOrCloseMenu((prev)=> !prev)} to={'/Guerlain'}>Guerlain</NavLink>
             <NavLink onClick={()=> setOpenOrCloseMenu((prev)=> !prev)} to={'/YvesSaintLaurent'}>Yves Saint Laurent</NavLink>
-            <NavLink onClick={()=> setOpenOrCloseMenu((prev)=> !prev)} to={'/Lancome'}>Lancôme</NavLink>
+            <NavLink onClick={()=> setOpenOrCloseMenu((prev)=> !prev)} to={'/PacoRabanne'}>Paco Rabanne</NavLink>
         </S.Nav>
     </S.Section>
   )
