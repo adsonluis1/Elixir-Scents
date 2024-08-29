@@ -3,7 +3,7 @@ import * as S from './HeaderMarca.styled'
 import NavPefumes from '../navPerfumes/NavPefumes'
 
 type Tperfume = {
-    marca:"Chanel" | "Dior" | "GiorgioArmani" | "YvesSaintLaurent" | "PacoRabanne" | undefined
+    marca:"Chanel" | "Dior" | "Guerlain" | "YvesSaintLaurent" | "PacoRabanne" | undefined
 }
 
 type THeaderMarca = {
