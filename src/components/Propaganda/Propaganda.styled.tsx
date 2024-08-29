@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 type Tpropaganda = {
-    $sr:"Chanel" | "Dior" | "Giorgio Armani" | "Yves Saint Laurent" | "Lancome"
+    $sr:"Chanel" | "Dior" | "Giorgio Armani" | "Yves Saint Laurent" | "Paco Rabanne"
 }
 
 type TDivPropaganda = {
@@ -34,27 +34,27 @@ export const DivImg = styled.div<Tpropaganda>`
     ${({$sr})=>
         $sr=="Chanel"?            
         css`
-                background-image: url('/img/chanel/propaganda-chanel.jpg');
+                background-image: url('/img/Chanel/propaganda-chanel.jpg');
             `
         :
         $sr=="Dior"?    
         css`
-                background-image: url('/img/dior/propaganda-dior.jpg');
+                background-image: url('/img/Dior/propaganda-dior.jpg');
            `        
         : 
         $sr=="Giorgio Armani"?    
         css`
-                background-image: url('/img/armani/propaganda-armani.jpg');
+                background-image: url('/img/GiorgioArmani/propaganda-armani.jpg');
            `        
         : 
         $sr == "Yves Saint Laurent"?
         css`
-            background-image: url('/img/laurent/propaganda-laurent.jpg');
+            background-image: url('/img/YvesSaintLaurent/propaganda-laurent.jpg');
         `
         :
-        $sr == "Lancome"?
+        $sr == "Paco Rabanne"?
         css`
-           background-image: url('/img/lancome/propaganda-lancome.jpg');
+           background-image: url('/img/PacoRabanne/propaganda-PacoRabanne.png');
         `
         :""
 
@@ -100,7 +100,7 @@ export const DivTitle = styled.div<Tpropaganda>`
             color: black;
         `
         :
-        $sr == "Lancome"?
+        $sr == "Paco Rabanne"?
         css`
             background-color: white;
             color: #ff908a;
