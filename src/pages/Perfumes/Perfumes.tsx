@@ -4,20 +4,74 @@ import ShowItens from '../../components/ShowItens/ShowItens'
 import HeaderMarca from '../../components/HeaderMarca/HeaderMarca'
 
 const Perfumes = () => {
+  const products = [
+    {
+      id:1, 
+      name:'Homme', 
+      price:959.99,
+      img:'/img/Dior/masculino-600x600.webp', 
+      tags:['#novidade', '#Exclusivo']
+    },
+    {
+      id:2, 
+      name:'Homme', 
+      price:959.99,
+      img:'/img/Dior/feminino-600x600.webp', 
+      tags:['#novidade', '#Exclusivo']
+    },
+    {
+      id:3, 
+      name:'Homme', 
+      price:959.99,
+      img:'/img/Dior/masculino-600x600.webp', 
+      tags:['#novidade', '#Exclusivo']
+    },
+    {
+      id:4, 
+      name:'Homme', 
+      price:959.99,
+      img:'/img/Dior/feminino-600x600.webp', 
+      tags:['#novidade', '#Exclusivo']
+    },
+    {
+      id:5, 
+      name:'Homme', 
+      price:959.99,
+      img:'/img/Dior/masculino-600x600.webp', 
+      tags:['#novidade', '#Exclusivo']
+    },
+    {
+      id:6, 
+      name:'Homme', 
+      price:959.99,
+      img:'/img/Dior/feminino-600x600.webp', 
+      tags:['#novidade', '#Exclusivo']
+    },
+    {
+      id:7, 
+      name:'Homme', 
+      price:959.99,
+      img:'/img/Dior/masculino-600x600.webp', 
+      tags:['#novidade', '#Exclusivo']
+    },
+    {
+      id:8, 
+      name:'Homme', 
+      price:959.99,
+      img:'/img/Dior/feminino-600x600.webp', 
+      tags:['#novidade', '#Exclusivo']
+    }
+  ]
+
   return (
     <>
     <Header />
     <S.Main>
         <HeaderMarca dark={false}/>
         <S.SectionProducts>
-            <ShowItens name='Homme' price={959.99} img='/img/Dior/masculino-600x600.webp' tags={['#novidade', '#Exclusivo']}/>
-            <ShowItens name='Miss Dior' price={839.99} img='/img/Dior/feminino-600x600.webp' tags={['#novidade', '#Exclusivo']}/>
-            <ShowItens name='Homme' price={959.99} img='/img/Dior/masculino-600x600.webp' tags={['#novidade', '#Exclusivo']}/>
-            <ShowItens name='Miss Dior' price={839.99} img='/img/Dior/feminino-600x600.webp' tags={['#novidade', '#Exclusivo']}/>
-            <ShowItens name='Homme' price={959.99} img='/img/Dior/masculino-600x600.webp' tags={['#novidade', '#Exclusivo']}/>
-            <ShowItens name='Miss Dior' price={839.99} img='/img/Dior/feminino-600x600.webp' tags={['#novidade', '#Exclusivo']}/>
-            <ShowItens name='Homme' price={959.99} img='/img/Dior/masculino-600x600.webp' tags={['#novidade', '#Exclusivo']}/>
-            <ShowItens name='Miss Dior' price={839.99} img='/img/Dior/feminino-600x600.webp' tags={['#novidade', '#Exclusivo']}/>
+            {products.map((product,index)=>[
+              <ShowItens key={index} product={product}/>
+            ])}
         </S.SectionProducts>
     </S.Main>
     </>
