@@ -25,7 +25,7 @@ const Home = () => {
             <Propaganda reverse={true} title='Dior' sr='Dior'/>
             <Propaganda reverse={false} title='Giorgio Armani'sr="Giorgio Armani"/>
             <Propaganda reverse={true} title='Yves Saint Laurent' sr='Yves Saint Laurent'/>
-            <Propaganda reverse={false} title='Lancome' sr='Lancome'/>
+            <Propaganda reverse={false} title='Paco Rabanne' sr='Paco Rabanne'/>
           </S.Section>
         </S.Main>
     </>
