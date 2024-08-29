@@ -14,11 +14,11 @@ const MenuMobile = ({setOpenOrCloseMenu}:MenuMobile) => {
             <IoMdClose onClick={()=> setOpenOrCloseMenu((prev)=> !prev)}/>
         </S.NavClose>
         <S.Nav>
-            <NavLink to={'/Chanel'}>Chanel</NavLink>
-            <NavLink to={'/Dior'}>Dior</NavLink>
-            <NavLink to={'/GiorgioArmani'}>Giorgio Armani</NavLink>
-            <NavLink to={'/YvesSaintLaurent'}>Yves Saint Laurent</NavLink>
-            <NavLink to={'/Lancome'}>Lancôme</NavLink>
+            <NavLink onClick={()=> setOpenOrCloseMenu((prev)=> !prev)} to={'/Chanel'}>Chanel</NavLink>
+            <NavLink onClick={()=> setOpenOrCloseMenu((prev)=> !prev)} to={'/Dior'}>Dior</NavLink>
+            <NavLink onClick={()=> setOpenOrCloseMenu((prev)=> !prev)} to={'/GiorgioArmani'}>Giorgio Armani</NavLink>
+            <NavLink onClick={()=> setOpenOrCloseMenu((prev)=> !prev)} to={'/YvesSaintLaurent'}>Yves Saint Laurent</NavLink>
+            <NavLink onClick={()=> setOpenOrCloseMenu((prev)=> !prev)} to={'/Lancome'}>Lancôme</NavLink>
         </S.Nav>
     </S.Section>
   )
