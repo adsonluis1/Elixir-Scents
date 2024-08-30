@@ -1,20 +1,12 @@
-import {ReactNode, useEffect } from 'react'
+import {ReactNode} from 'react'
+import useDesableScroll from '../../hooks/useDesableScroll'
 
 type TFocus = {
     children:ReactNode
 }
 
 const Focus = ({children}:TFocus) => {
-  useEffect(()=>{const desabilitScroll = (evt:Event)=>{
-    evt.preventDefault()
-  }
-  document.body.style.overflow = "hidden"
-  window.addEventListener('wheel', desabilitScroll, { passive: false });
-  return () => {
-    document.body.style.overflow = ''
-    window.removeEventListener('wheel', desabilitScroll);
-  }
-},[])
+  useDesableScroll()
     return (
         <>
             {children}
