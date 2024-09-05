@@ -10,6 +10,7 @@ export const Section = styled.section`
     margin-top: 50px;
     padding: 10px;
     width: 100%;
+    scroll-behavior: smooth;
 
     @media screen and (max-width: 480px){
         flex-direction: column;
@@ -26,3 +27,8 @@ export const DivRight = styled.div`
     }
 `
 
+export const Loader = styled.h2`
+    margin-left: 20px;
+`
+
+export const Error = styled(Loader)``
