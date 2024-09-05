@@ -18,6 +18,6 @@ export const DivTopMarca = styled.div`
 
 export const Title = styled.h1`
     color: white;
-    cursor: default;
+    cursor: pointer;
     font-size: clamp(2em, 6vh, 3em);
 `
