@@ -1,14 +1,18 @@
 import * as S from './ProductDescription.styled'
 
-const ProductDescription = () => {
-    {/* Receber as informações por props */}
-  
+type TProductDescription = {
+  tags:string[],
+  name:string,
+  price:number
+}
+
+const ProductDescription = ({tags,name,price}:TProductDescription) => {
     return (
     <S.DivDescription>
-        <S.title>BLUE DE CHANEL</S.title>
-        <S.Description>PARFUM SPRAY</S.Description>
+        <S.title>{name.toLocaleUpperCase()}</S.title>
+        <S.Description>{tags.join(', ')}</S.Description>
         <S.Link href='#detalhes'>Mais detalhes</S.Link>
-        <S.Price>R$ 1.320</S.Price>
+        <S.Price>R$ {price}</S.Price>
     </S.DivDescription>
   )
 }
