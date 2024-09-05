@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
 import * as S from './ProductImgs.styled'
 import Focus from '../FocusImg/Focus'
 
-function ProductImgs() {
+function ProductImgs({url}:{url:string}) {
     {/* receber as informações por props */}
     const [clicked, setClicked] = useState<string>('')
     const handleClickImg = (img:React.MouseEvent<HTMLImageElement>)=>{
@@ -23,9 +23,7 @@ function ProductImgs() {
             </S.ContainerClickedImg>
         </Focus>
         }
-        <S.Img onClick={handleClickImg} src='/img/Chanel/masculino-600x600.webp'/>
-        <S.Img onClick={handleClickImg} src='/img/Dior/masculino-600x600.webp'/>
-        <S.Img onClick={handleClickImg} src='/img/Guerlain/masculino-600x600.webp'/>
+        <S.Img onClick={handleClickImg} src={url}/>
     </S.DivImgs>
   )
 }
