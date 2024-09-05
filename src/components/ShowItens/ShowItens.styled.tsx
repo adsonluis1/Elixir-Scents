@@ -18,7 +18,12 @@ export const Div = styled.div`
 `
 
 export const Img = styled.img`
+    transition: .1s;
     width: 100%;
+
+    &:hover{
+        border-bottom: 3px solid black;
+    }
 `
 
 export const DescripitionContainer = styled.div`
