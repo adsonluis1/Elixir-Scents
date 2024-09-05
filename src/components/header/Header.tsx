@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import * as S from "./Header.styled"
 import { FaRegUser, FaSearch, FaShoppingBag  } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
@@ -7,12 +7,13 @@ import Search from "../search/Search";
 import { useNavigate } from "react-router-dom";
 import {NavLink} from "react-router-dom"
 import Bag from "../Bag/Bag";
+import { Context } from "../../context/Login";
 
 const Header = () => {
     const [openOrCloseMenu, setOpenOrCloseMenu] = useState<boolean>(false)
     const [openOrCloseSearch,setOpenOrCloseSearch] = useState<boolean>(false)
     const [openOrCloseBag, setOpenOrCloseBag] = useState<boolean>(false)
-    
+    const {user} = useContext(Context)
     const navigate = useNavigate()
 
     return (
@@ -35,7 +36,9 @@ const Header = () => {
 
             <S.NavIcons>
                 <FaSearch onClick={()=> setOpenOrCloseSearch((prev)=> !prev)}/>
+                {!user?.name &&
                 <FaRegUser onClick={()=> navigate('/dashbordAccount')}/>
+                }
                 <FaShoppingBag onClick={()=> setOpenOrCloseBag(true)}/>
             </S.NavIcons>
         </S.Header>
