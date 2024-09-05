@@ -15,3 +15,9 @@ export const SectionProducts = styled.section`
        gap: 20px;
     }
 `
+
+export const Loader = styled.h2`
+    margin-left: 20px;
+`
+
+export const Error = styled(Loader)``
