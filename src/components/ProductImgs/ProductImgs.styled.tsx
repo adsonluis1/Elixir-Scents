@@ -2,6 +2,8 @@ import styled from "styled-components"
 
 export const DivImgs = styled.div`
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     width: 60%;
 
@@ -12,7 +14,7 @@ export const DivImgs = styled.div`
 
 export const Img = styled.img`
     cursor: pointer;
-    width: 50%;
+    width: 100%;
     max-width: 400px;
 `
 
