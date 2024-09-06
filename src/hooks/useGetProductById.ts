@@ -1,19 +1,9 @@
 import { useEffect, useState } from "react"
-// import { TProduct } from "../components/ShowItens/ShowItens"
-
-type TProduct = {
-    name:string
-    price:number
-    tags:string[]
-    profileImage:{path:string}
-    description:string
-    aroma:string
-    _id:number | string
-}
+import { IProduct } from "../types/Product"
 
 const useGetProductById = (id:string,marca:string) => {
     marca = marca.charAt(0).toLocaleLowerCase() + marca.slice(1)
-    const [product, setProduct] = useState<TProduct|null>(null)
+    const [product, setProduct] = useState<IProduct|null>(null)
     const [load, setLoad] = useState<boolean>(true)
     const [error, setError] = useState<string>('')
 
