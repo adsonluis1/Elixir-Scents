@@ -6,11 +6,11 @@ import { useEffect, useState } from 'react';
 import useCheckWidth from '../../hooks/useCheckWidth';
 
 type TNavPerfumes = {
-  url:"Chanel" | "Dior" | "Guerlain" | "YvesSaintLaurent" | "PacoRabanne" | undefined
+  marca:"Chanel" | "Dior" | "Guerlain" | "YvesSaintLaurent" | "PacoRabanne" | undefined
   dark?:boolean
 }
 
-const NavPefumes = ({url,dark}:TNavPerfumes) => {
+const NavPefumes = ({marca,dark}:TNavPerfumes) => {
   const [openOrClose, setOpenOrClose] = useState<boolean>(true)
   const {screenWidth} = useCheckWidth()
   useEffect(()=>{
@@ -25,14 +25,14 @@ const NavPefumes = ({url,dark}:TNavPerfumes) => {
         <>
           <S.CoverImgs>
             <S.DivImg>
-              <NavLink to={`/${url}/masculino`}>
-                      <S.Img src={`/img/${url}/masculino-600x600.webp`}/>
+              <NavLink to={`/${marca}/masculino`}>
+                      <S.Img src={`/img/${marca}/masculino-600x600.webp`}/>
               </NavLink>
               <S.Description $dark={dark}>Masculino</S.Description>
             </S.DivImg>
             <S.DivImg>
-              <NavLink to={`/${url}/feminino`}>
-                <S.Img src={`/img/${url}/feminino-600x600.webp`}/>
+              <NavLink to={`/${marca}/feminino`}>
+                <S.Img src={`/img/${marca}/feminino-600x600.webp`}/>
               </NavLink>
               <S.Description $dark={dark}>Feminino</S.Description>
             </S.DivImg>
