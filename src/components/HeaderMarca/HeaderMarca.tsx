@@ -1,10 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import * as S from './HeaderMarca.styled'
 import NavPefumes from '../navPerfumes/NavPefumes'
-
-type Tperfume = {
-    marca:"Chanel" | "Dior" | "Guerlain" | "YvesSaintLaurent" | "PacoRabanne" | undefined
-}
+import { Tperfume } from '../../types/Product'
 
 type THeaderMarca = {
     dark:boolean
@@ -18,7 +15,7 @@ const HeaderMarca = ({dark}:THeaderMarca) => {
         <S.DivTopMarca>
             <S.Title onClick={()=> navigate(`/${marca}`)}>{marca?.replace(/([A-Z])/g, ' $1')}</S.Title>
         </S.DivTopMarca>
-        <NavPefumes dark={dark} url={marca}/>
+        <NavPefumes dark={dark} marca={marca}/>
     </S.Section>
   )
 }
