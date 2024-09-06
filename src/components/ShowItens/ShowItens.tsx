@@ -1,24 +1,31 @@
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import * as S from './ShowItens.styled'
 import { TMarcas } from '../../pages/PerfumesSexo/PerfumesSexo'
-
-type TProfileImage = {
-  path:string
-}
+import { useContext, useEffect, useState} from 'react'
+import { Context } from '../../context/Login'
+import { IProduct } from '../../types/Product'
+import { handleClickBuyButton } from '../../utils/functions'
 
 export type TProduct = {
-    product:{
-      name:string
-      price:number
-      tags:string[]
-      profileImage:TProfileImage
-      _id:number | string
-    }
+    product:IProduct
 }
 
 const ShowItens = ({product}:TProduct) => {
   const {marca} = useParams<TMarcas>()
+  const {user} = useContext(Context)
+  const [done, setDone] = useState(false)
   const {_id, profileImage, name, price,tags} = product
+  const navigate = useNavigate()
+  
+  useEffect(()=>{
+    if(done == true){
+      console.log('add ao carrinho')
+      setDone(false)
+    }
+
+    return ()=> setDone(false)
+  },[done])
+  
   return (
     <S.Div>
         <NavLink to={`/${marca}/${_id}`}>
@@ -31,7 +38,7 @@ const ShowItens = ({product}:TProduct) => {
         </S.DivTags>
         <S.Title>{name}</S.Title>
         <S.Price>R$ {price}</S.Price>
-        <S.ButtonBuy>Comprar</S.ButtonBuy>
+        <S.ButtonBuy onClick={()=> handleClickBuyButton(user,product,navigate,setDone)}>Comprar</S.ButtonBuy>
     </S.Div>
   )
 }
