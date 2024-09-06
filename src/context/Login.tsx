@@ -1,7 +1,8 @@
 import { createContext, ReactNode, SetStateAction, useState } from "react";
+import { IUser } from "../types/User";
 
 type TContext = {
-    user:{},
+    user:IUser,
     setUser:React.Provider<SetStateAction<{}>>
 }
 
