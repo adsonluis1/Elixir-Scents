@@ -1,9 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import * as S from './Propaganda.styled'
+import { TMarcas } from '../../types/Product'
 
 export type Tpropaganda = {
-  title:"Chanel" | "Dior" | "Guerlain" | "Yves Saint Laurent" | "Paco Rabanne"
-  sr:"Chanel" | "Dior" | "Guerlain" | "Yves Saint Laurent" | "Paco Rabanne"
+  title:TMarcas
+  sr:TMarcas
   reverse:boolean
 }
 
