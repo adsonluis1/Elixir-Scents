@@ -5,6 +5,7 @@ import { IoMdMenu } from "react-icons/io";
 import MenuMobile from "../menuMobile/MenuMobile";
 import Search from "../search/Search";
 import { useNavigate } from "react-router-dom";
+import { FaUserEdit } from "react-icons/fa";
 import {NavLink} from "react-router-dom"
 import Bag from "../Bag/Bag";
 import { Context } from "../../context/Login";
@@ -38,6 +39,9 @@ const Header = () => {
                 <FaSearch onClick={()=> setOpenOrCloseSearch((prev)=> !prev)}/>
                 {!user?.name &&
                 <FaRegUser onClick={()=> navigate('/dashbordAccount')}/>
+                }
+                {user?.name && 
+                    <FaUserEdit onClick={()=> navigate('/editUser')}/>
                 }
                 <FaShoppingBag onClick={()=> setOpenOrCloseBag(true)}/>
             </S.NavIcons>
