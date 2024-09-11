@@ -8,7 +8,9 @@ export interface IAddress {
     street:string
     cep:string
     city:string
-    number:number
+    number:string
+    neighborhood:string
+    state:string
 }
 
 export interface IUserMainInfos {
