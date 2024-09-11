@@ -6,13 +6,21 @@ import Home from "./pages/home/Home"
 import Perfumes from "./pages/Perfumes/Perfumes"
 import PerfumesSexo from "./pages/PerfumesSexo/PerfumesSexo"
 import Product from "./pages/Product/Product"
+import EditAddress from "./pages/EditAddress/EditAddress"
+import { useContext } from "react"
+import { Context } from "./context/Login"
 
 
 function App() {
+  const {user} = useContext(Context)
   return (
     <>
       <Routes>
         <Route path="/" element={<Home/>}/>
+        {user?.name ? 
+        <Route path="/editUser" element={<EditAddress user={user}/>} />:
+        <Route path="/editUser" element={<Register />} />
+        }
         <Route path="/login" element={<Login />}/>
         <Route path="/register" element={<Register />}/>
         <Route path="/dashbordAccount" element={<DashbordLoginRegister />}/>
@@ -20,7 +28,7 @@ function App() {
         <Route path="/:marca/masculino" element={<PerfumesSexo />}/>
         <Route path="/:marca/feminino" element={<PerfumesSexo />}/>
         <Route path="/:marca/:id" element={<Product />}/>
-      </Routes>
+        </Routes>
     </>
   )
 }
