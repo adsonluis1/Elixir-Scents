@@ -10,6 +10,6 @@ export const handleClickBuyButton = (user:IUser,product:IProduct, navigate:Navig
         navigate('/login')
         return
     }
-    console.log(product)
+
     useAddProductIntoBag(user,product,setDone)
 }
