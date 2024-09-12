@@ -2,10 +2,11 @@ import { useContext, useState } from "react";
 import * as S from "./Header.styled"
 import { FaRegUser, FaSearch, FaShoppingBag  } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
+import { ImExit } from "react-icons/im";
+import { FaUserEdit } from "react-icons/fa";
 import MenuMobile from "../menuMobile/MenuMobile";
 import Search from "../search/Search";
 import { useNavigate } from "react-router-dom";
-import { FaUserEdit } from "react-icons/fa";
 import {NavLink} from "react-router-dom"
 import Bag from "../Bag/Bag";
 import { Context } from "../../context/Login";
@@ -40,8 +41,11 @@ const Header = () => {
                 {!user?.name &&
                 <FaRegUser onClick={()=> navigate('/dashbordAccount')}/>
                 }
-                {user?.name && 
-                    <FaUserEdit onClick={()=> navigate('/editUser')}/>
+                {user?.name &&
+                    <>
+                        <FaUserEdit onClick={()=> navigate('/perfil')}/>
+                        <ImExit />
+                    </> 
                 }
                 <FaShoppingBag onClick={()=> setOpenOrCloseBag(true)}/>
             </S.NavIcons>
