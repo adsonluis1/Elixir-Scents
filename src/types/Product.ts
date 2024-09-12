@@ -33,7 +33,7 @@ export interface IProduct {
     profileImage:{path:string}
     description:string
     aroma:string
-    _id:number | string
+    _id:string
     commits:ICommits
     rate:number
     amount:number
