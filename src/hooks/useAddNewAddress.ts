@@ -14,17 +14,13 @@ const useAddNewAddress = async (address:TEditAddress) => {
         street
     }
     try {
-        console.log('foi')
-        console.log(address)
-        const dataJson = await fetch('http://localhost:3333/account/addAdditionalInfo',{
+        await fetch('http://localhost:3333/account/addAdditionalInfo',{
             method:"PATCH",
             body:JSON.stringify({idClient,cpf,...newAddress}),
             headers:{
                 "Content-Type": "application/json"
             }        
         })
-        const data = await dataJson.json()
-        console.log(data)
     } catch (err) {
         if(err instanceof Error)
             error = err.message
