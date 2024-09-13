@@ -10,6 +10,7 @@ import EditAddress from "./pages/EditAddress/EditAddress"
 import { useContext } from "react"
 import { Context } from "./context/Login"
 import ClientPerfil from "./pages/clientPerfil/ClientPerfil"
+import PurchaseHistory from "./pages/purchaseHistory/PurchaseHistory"
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         } */}
         <Route path="/perfil" element={<ClientPerfil user={user}/>} />
         <Route path="/perfil/editarEndereco" element={<EditAddress user={user}/>} />
+        <Route path="/perfil/historicoCompra" element={<PurchaseHistory user={user}/>} /> 
         <Route path="/login" element={<Login />}/>
         <Route path="/register" element={<Register />}/>
         <Route path="/dashbordAccount" element={<DashbordLoginRegister />}/>
