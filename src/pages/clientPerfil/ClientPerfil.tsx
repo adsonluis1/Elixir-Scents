@@ -16,11 +16,11 @@ const ClientPerfil = ({user}:{user:IUser}) => {
                     <S.Description>Aqui voce pode ver e editar as informações da sua conta.</S.Description>
                 </S.DivTitle>
                 <S.DivInfoContainer>
-                    <S.Info onClick={()=> navigate('editarEndereco')}>
+                    <S.Info onClick={()=> navigate('/perfil/editarEndereco')}>
                         <S.TitleInfo>Editar endereço</S.TitleInfo>
                         <S.Img src="/img/editar-endereço.png"/>
                     </S.Info>
-                    <S.Info>
+                    <S.Info onClick={()=> navigate('/perfil/historicoCompra')}>
                         <S.TitleInfo>Historico de compra</S.TitleInfo>
                         <S.Img src='/img/historico-compra.png'/>
                     </S.Info>
