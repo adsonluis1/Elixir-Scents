@@ -37,4 +37,10 @@ export interface IProduct {
     commits:ICommits
     rate:number
     amount:number
+    label:string
+}
+
+export interface IProductPurchase {
+    datePurchase:string
+    products:IProduct[]
 }
