@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import useDesableScroll from '../../hooks/useDesableScroll'
 import * as S from './Bag.styled'
 import {Button, DivButton} from "../bagSelectProduct/SelectProduct.styled"
@@ -8,6 +8,7 @@ import useGetProductsByBag from '../../hooks/useGetProductsByBag';
 import BagShowProducts from '../bagShowProducts/BagShowProducts';
 import { IProduct } from '../../types/Product';
 import SelectProduct from '../bagSelectProduct/SelectProduct';
+import { handleClickProductClearBag, handleClickProductFinishBuy } from '../../utils/functions';
 
 type TCarrinho = {
     setOpenOrCloseBag:React.Dispatch<React.SetStateAction<boolean>>
@@ -17,7 +18,13 @@ type TCarrinho = {
 const Bag = ({setOpenOrCloseBag, openOrCloseBag}:TCarrinho) => {
     const [productSelect, setProductSelect] = useState<IProduct | null>(null)
     const {user} = useContext(Context)
-    const {bag, error,load} = useGetProductsByBag(user._id)
+    const {bag, error,load,setBag} = useGetProductsByBag(user._id)
+
+    useEffect(()=>{
+        if(productSelect)
+            setBag((prev)=> prev.filter((product)=> product != productSelect))
+    },[productSelect])
+   
     useDesableScroll()
     return (
         <>
@@ -26,20 +33,23 @@ const Bag = ({setOpenOrCloseBag, openOrCloseBag}:TCarrinho) => {
             <S.DivBag $showOrNot={openOrCloseBag}>
                 <IoMdClose onClick={()=>setOpenOrCloseBag(false)} className='close'/>
                 <S.TitleBag>Sacola de compras</S.TitleBag>
-                {error && 
-                    <S.Error>Erro ao carregar a sacola :(</S.Error>
+                {!user.name && 
+                    <S.Information>Nenhum item no salacola</S.Information>
                 }
-                {load && 
-                    <S.Loader>Carregando...</S.Loader>
+                {error && user.name && !load? 
+                    <S.Error>Erro ao carregar a sacola :(</S.Error>:null
                 }
-                {bag && productSelect == null?bag.map((product)=>[    
+                {load && user.name && !error?
+                    <S.Loader>Carregando...</S.Loader>:null
+                }
+                {bag?.length > 0 && productSelect == null?bag.map((product)=>[    
                     <BagShowProducts productSelect={false} setSelectProduct={setProductSelect} product={product} key={product._id}/>  
                 ])
                 :null}
-                {bag && productSelect == null?
+                {bag?.length > 0 && productSelect == null?
                     <DivButton>
-                        <Button $delete={false}>Finalizar compra</Button>
-                        <Button $delete={true}>Limpar sacola</Button>
+                        <Button onClick={()=> handleClickProductFinishBuy(bag,user,setBag)} $delete={false}>Finalizar compra</Button>
+                        <Button onClick= {()=> handleClickProductClearBag(bag,user,setBag) }$delete={true}>Limpar sacola</Button>
                     </DivButton>
                 :null}
                 {productSelect != null &&
