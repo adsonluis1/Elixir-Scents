@@ -21,6 +21,7 @@ export const DivBag = styled.div<TShowOrNotBag>`
     align-items: center;
     position: absolute;
     background-color: white;
+    overflow: scroll;
     gap: 5px;
     z-index: 1;
     padding: 10px;
@@ -54,5 +55,7 @@ export const TitleBag = styled.h2`
 export const Error = styled.p`
     font-size: 1.3em;
 `
+
+export const Information = styled(Error)``
 
 export const Loader = styled(Error)``
