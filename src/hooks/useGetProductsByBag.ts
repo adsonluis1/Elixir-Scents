@@ -5,6 +5,10 @@ const useGetProductsByBag = (idClient:string) => {
     const [bag, setBag] = useState<IProduct[]>([])
     const [load, setLoad] = useState<boolean>(true)
     const [error, setError] = useState<string>('')
+    
+    if(!idClient){
+        return {bag, load, error,setBag}
+    }
 
     useEffect(()=>{
         const getProduct = async ()=>{
@@ -22,7 +26,7 @@ const useGetProductsByBag = (idClient:string) => {
         getProduct()
     },[])    
 
-    return {bag, load, error}
+    return {bag, load, error,setBag}
 
 
 }
