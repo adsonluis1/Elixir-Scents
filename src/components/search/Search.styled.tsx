@@ -4,6 +4,7 @@ export const Section = styled.section`
     background-color: white;
     color: black;
     position: absolute;
+    overflow: hidden;
     z-index: 1;
     top: 100px;
     left: 0;
@@ -52,4 +53,37 @@ export const Button = styled.button`
 export const Error = styled.p`
     color: red;
     font-size: 0.9em;
+`
+
+export const DivContainImg = styled.div`
+    width: 100%;
+    height: 400px;
+`
+
+export const DivImgs = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    overflow-y: scroll;
+    padding-bottom: 5px;
+    gap: 5px;
+    height: 100%;
+
+    &::-webkit-scrollbar{
+        height: 5px;
+    } 
+
+    &::-webkit-scrollbar-track{
+        background-color: #3f3f3f87;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color: black;
+        border-radius: 10px;
+    }
+
+    & > img{
+        width: 20%;
+    }
 `
