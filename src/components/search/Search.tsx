@@ -1,8 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import * as S from "./Search.styled"
 import { FaSearch } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
-import useSearch from "../../hooks/useSearch";
+import useFormSearch from "../../hooks/useFormSearch";
 import useDesableScroll from "../../hooks/useDesableScroll";
 
 type Search = {
@@ -10,11 +10,13 @@ type Search = {
 }
 
 const Search = ({setOpenOrCloseSearch}:Search) => {
-  const {register,handleSubmit,handleSubmiteData,errors} = useSearch()
+  const {register,handleSubmit,handleSubmitData,errors} = useFormSearch()
   useDesableScroll()
-
+  useEffect(()=>{
+    setOpenOrCloseSearch((prev)=> !prev)
+  },[handleSubmitData])
   return (
-    <S.Section onSubmit={handleSubmit(handleSubmiteData)}>
+    <S.Section onSubmit={handleSubmit(handleSubmitData)}>
         <S.Form>
           <S.DivForm>
             <S.Input {...register("search")} type="search" placeholder="Procure aqui"/>
